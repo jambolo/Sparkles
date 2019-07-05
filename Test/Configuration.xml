@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<ParticleSystem xmlns="http://confetti" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Configuration.xsd">
+	<Volume name="vol0" type="point" />
+	<Volume name="vol1" type="line" length="10." />
+	<Volume name="vol2" type="rectangle" width="50." height="50." />
+	<Volume name="vol3" type="circle" radius="10." />
+	<Volume name="vol4" type="sphere" radius="10." />
+	<Volume name="vol5" type="box" width="10." height="10." depth="10."  />
+	<Volume name="vol6" type="cylinder" height="10." radius="10." />
+	<Volume name="vol7" type="cone" height="10." radius="10." />
+	<BouncePlaneList name="bounceplanes">
+		<BouncePlane x="0." y="1." z="0." d="0." dampening=".5" />
+	</BouncePlaneList>
+	<ClipPlaneList name="clipplanes">
+		<ClipPlane x="0." y="1." z="0." d="0." />
+	</ClipPlaneList>
+	<Appearance name="appearance" radiusDelta="0." radialVelocity="0." >
+		<ColorDelta g="-.05" r="-.05" b="-.05" a="-.05"/>
+	</Appearance>
+	<Appearance name="texturedappearance" radiusDelta="0." radialVelocity="0." texture="res/ember.tga" >
+		<ColorDelta g="-.05" r="-.20" b="-.05" a="-.05"/>
+	</Appearance>
+	<Appearance name="streakappearance" radiusDelta="0." radialVelocity="0." size="2." >
+		<ColorDelta g="-.05" r="-.05" b="-.05" a="-.05"/>
+	</Appearance>
+	<Environment name="environment" airFriction="0.4" > <!--bounce="bounceplanes" clip="clipplanes" /> -->
+		<Gravity x="0." y="-9.8" z="0." />
+		<WindVelocity x="0." y="0." z="0."/>
+		<Gustiness x="40." y="10." z="40."/>
+	</Environment>
+	<Emitter name="e0" type="point" volume="vol0" environment="environment" appearance="appearance" count="20000" lifetime="20." spread="0.4" minSpeed="30." maxSpeed="100." />
+<!--
+	<Emitter name="textured" type="textured" volume="vol0" environment="environment" appearance="texturedappearance" count="20000" spread="0.4" minSpeed="30." maxSpeed="100." color="ff4cc0f2" lifetime="20." />
+	<Emitter name="streak" type="streak" volume="vol0" environment="environment" appearance="appearance" count="1000" spread="0.4" minSpeed="30." maxSpeed="100." />
+	<Emitter name="sphere" type="sphere" volume="vol2" environment="environment" appearance="appearance" count="1000" spread="0.4" minSpeed="30." maxSpeed="100." />
+-->
+</ParticleSystem>
